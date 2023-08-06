@@ -11,3 +11,5 @@ export { default as FavoriteButton } from './FavoriteButton';
 export { default as InfoModal } from './InfoModal';
 export { default as MovieList } from './MovieList';
 export { default as Loading } from './Loading';
+export { default as Avatar } from './Avatar';
+export { default as MessageItem } from './MessageItem';

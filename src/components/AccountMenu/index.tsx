@@ -1,14 +1,17 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 interface AccountMenuProps {
 	visible?: boolean;
 }
 
 const AccountMenu: React.FC<AccountMenuProps> = ({ visible }) => {
-	// const { data: currentUser } = useCurrentUser();
-	// const route = useRouter()
+	const navigate = useNavigate();
 
+	const handleSignOut = () => {
+		navigate('/signin')
+
+	}
 	if (!visible) {
 		return null;
 	}
@@ -24,10 +27,7 @@ const AccountMenu: React.FC<AccountMenuProps> = ({ visible }) => {
 			</div>
 			<hr className="bg-gray-600 border-0 h-px my-4" />
 			<div
-				onClick={() => {
-					// route.push('/auth')
-					// signOut()
-				}}
+				onClick={handleSignOut}
 				className="px-3 text-center text-white text-sm hover:underline"
 			>
 				Sign out of Netflix

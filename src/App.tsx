@@ -1,16 +1,14 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
+import { RouterProvider } from 'react-router-dom';
+import route from './route';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
+const queryClient = new QueryClient();
 function App () {
-
-
   return (
-    <div className="App">
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-      </Routes>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={route} />
+    </QueryClientProvider>
   );
 }
 
